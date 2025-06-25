@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './Pages/home';
+import Blogs from './Pages/Blog';
 
 function App() {
 	return (
@@ -8,6 +9,10 @@ function App() {
 				<Route
 					path='/'
 					element={<HomePage />}
+				/>
+				<Route
+					path='/blog'
+					element={<Blogs />}
 				/>
 			</Routes>
 		</div>

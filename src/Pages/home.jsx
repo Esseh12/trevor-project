@@ -1,6 +1,7 @@
 import Hero from '../Components/LandingPage/Hero';
 import CelebratePride from '../Components/LandingPage/celebratePride';
 import TrainedCounsellor from '../Components/LandingPage/traninedCounsellor';
+import Footer from '../Components/footer';
 
 const Homepage = () => {
 	return (
@@ -8,6 +9,7 @@ const Homepage = () => {
 			<Hero />
 			<CelebratePride />
 			<TrainedCounsellor />
+			<Footer />
 		</>
 	);
 };
