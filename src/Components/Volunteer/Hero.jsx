@@ -81,7 +81,7 @@ const Hero = ({
 			{/* image */}
 			{image && (
 				<div
-					className={`mt-8 ${imageSizeClasses[imageSize]} w-full max-w-[950px] ${imageClassName}`}>
+					className={`mt-8 ${imageSizeClasses[imageSize]} w-full max-w-[950px] relative z-10 ${imageClassName}`}>
 					<img
 						src={image}
 						alt='hero'

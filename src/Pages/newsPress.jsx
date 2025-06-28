@@ -4,6 +4,7 @@ import { newsItems, resources } from '../Components/data';
 import heroImg from '../assets/TTP_BrandIllustrations_ShowYourPride_Square.png';
 import Hero from '../Components/Press/hero';
 import ResourceCard from '../Components/Press/resourceCard';
+import Contact from '../Components/Press/contact';
 import Footer from '../Components/footer';
 
 const NewsPress = () => {
@@ -137,8 +138,9 @@ const NewsPress = () => {
 						</div>
 					</div>
 				</section>
+				<Contact />
 			</main>
-			<Footer />
+			<Footer backgroundColor='#101066' />
 		</>
 	);
 };
