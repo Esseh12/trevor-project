@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
 	FaFacebookF,
 	FaTwitter,
@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa';
 import footer_logo from '../assets/footer-logo.png';
 
-const Footer = () => {
+const Footer = ({ backgroundColor = '#003a48' }) => {
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
 
@@ -80,14 +80,16 @@ const Footer = () => {
 	];
 
 	return (
-		<footer className='w-full bg-[#003a48] min-h-screen'>
+		<footer
+			className='w-full min-h-screen'
+			style={{ backgroundColor }}>
 			<div className='flex flex-col lg:flex-row justify-between items-start text-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto'>
 				{/* Left Column */}
 				<div className='mb-12 lg:mb-0 w-full lg:w-auto lg:flex-1'>
 					<img
 						src={footer_logo}
 						alt='footer logo'
-						className='mb-6 w-auto h-auto max-w-full'
+						className='mb-6 w-[180px] sm:w-[200px] md:w-[220px] lg:w-[240px]'
 					/>
 
 					<div className='ml-0 lg:ml-6'>
