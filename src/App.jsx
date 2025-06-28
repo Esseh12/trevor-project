@@ -8,6 +8,7 @@ import Volunteer from './Pages/volunteer';
 import BreathingExcercise from './Pages/breathingExcercises';
 import Fundraise from './Pages/fundraise';
 import CrisisServices from './Pages/crisisServices';
+import PublicEducation from './Pages/publicEducation';
 
 function App() {
 	return (
@@ -48,6 +49,10 @@ function App() {
 				<Route
 					path='/crisis-services'
 					element={<CrisisServices />}
+				/>
+				<Route
+					path='/public-education'
+					element={<PublicEducation />}
 				/>
 			</Routes>
 		</div>
