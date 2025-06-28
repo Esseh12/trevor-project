@@ -66,7 +66,7 @@ const Hero = ({
 				{/* Button */}
 				{buttonText && (
 					<button
-						className={`text-lg md:text-xl leading-[26px] font-bold rounded-xl px-6 py-4 transition-all duration-200 hover:opacity-90 hover:scale-105 ${buttonClassName}`}
+						className={`text-lg md:text-xl leading-6.5 font-bold rounded-xl px-6 py-4 transition-all duration-200 hover:opacity-90 hover:scale-105 ${buttonClassName}`}
 						style={{
 							backgroundColor: buttonColor,
 							color: buttonTextColor,
