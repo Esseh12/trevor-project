@@ -304,7 +304,7 @@ const Navbar = () => {
 								Meet Friends
 							</Link>
 							<Link
-								to='/crisis-services'
+								to='/get-help'
 								className='bg-[#101066] hover:bg-white text-white px-6 py-3 rounded-full text-sm  transition-colors inline-block hover:border-2 hover:border-[#101066] hover:text-[#101066] font-extrabold'>
 								Reach A Counselor
 							</Link>
