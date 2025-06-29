@@ -9,6 +9,8 @@ import BreathingExcercise from './Pages/breathingExcercises';
 import Fundraise from './Pages/fundraise';
 import CrisisServices from './Pages/crisisServices';
 import PublicEducation from './Pages/publicEducation';
+import PeerSupport from './Pages/peerSuppoert';
+import ContactUs from './Pages/contactUs';
 
 function App() {
 	return (
@@ -53,6 +55,14 @@ function App() {
 				<Route
 					path='/public-education'
 					element={<PublicEducation />}
+				/>
+				<Route
+					path='/visit-trevorspace'
+					element={<PeerSupport />}
+				/>
+				<Route
+					path='/contact-us'
+					element={<ContactUs />}
 				/>
 			</Routes>
 		</div>

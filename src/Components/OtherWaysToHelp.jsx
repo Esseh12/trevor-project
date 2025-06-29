@@ -2,10 +2,11 @@ const OtherWaysToHelp = () => {
 	return (
 		<div className='w-full max-w-6xl mx-auto px-4 py-12'>
 			{/* Main Heading */}
-			<h2 className='text-4xl md:text-[46px] font-bold text-center text-[#101066] leading-14 mb-12 lg:mb-16'>
-				There are other ways to help.
-			</h2>
-
+			<div>
+				<h2 className='text-4xl md:text-[46px] font-bold text-center text-[#101066] leading-14 mb-12 lg:mb-16'>
+					There are other ways to help.
+				</h2>
+			</div>
 			{/* Cards Container */}
 			<div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
 				{/* Volunteer Card */}
