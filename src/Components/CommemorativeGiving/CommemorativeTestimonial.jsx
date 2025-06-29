@@ -47,7 +47,7 @@ export default function CommemorativeCarousel() {
 					{/* Content */}
 					<div className='text-center max-w-xl '>
 						{/* Quote Icon */}
-						<div className='text-2xl md:text-3xl font-bold text-white mb-3 flex items-center justify-center relative'>
+						<div className='text-2xl md:text-3xl font-bold text-white mb-3 flex items-center justify-center relative caveat'>
 							<RiDoubleQuotesL />
 							<RiDoubleQuotesR className='bottom-3' />
 						</div>

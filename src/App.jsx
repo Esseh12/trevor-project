@@ -14,6 +14,7 @@ import PeerSupport from './Pages/peerSuppoert';
 import ContactUs from './Pages/contactUs';
 import FinancialReport from './Pages/financialReport';
 import CommemorativeGiving from './Pages/commemorativeGiving';
+import ReachCounselor from './Pages/reachCounsellor';
 
 function App() {
 	return (
@@ -75,6 +76,10 @@ function App() {
 				<Route
 					path='/commemorative-giving'
 					element={<CommemorativeGiving />}
+				/>
+				<Route
+					path='/get-help'
+					element={<ReachCounselor />}
 				/>
 			</Routes>
 		</div>
