@@ -52,7 +52,7 @@ const Navbar = () => {
 				{
 					name: 'Contact Us',
 					description: 'Reach out to one of our team members',
-					path: '/contact',
+					path: '/contact-us',
 				},
 			],
 		},
@@ -69,7 +69,7 @@ const Navbar = () => {
 					name: 'Peer Support',
 					description:
 						'We provide an affirming international community for LGBTQ+ young people',
-					path: '/peer-support',
+					path: '/visit-trevorspace',
 				},
 				{
 					name: 'Advocacy',
@@ -95,19 +95,14 @@ const Navbar = () => {
 			title: 'Get Involved',
 			items: [
 				{
+					name: 'Partner With Us',
+					description: 'Join our list of amazing partners',
+					path: '/partner-with-us',
+				},
+				{
 					name: 'Volunteer',
-					description: 'Join our team of volunteers',
+					description: 'Apply to join us in supporting young LGBTQ+ lives',
 					path: '/volunteer',
-				},
-				{
-					name: 'Fundraise',
-					description: 'Help us raise funds for our mission',
-					path: '/fundraise',
-				},
-				{
-					name: 'Partner',
-					description: 'Become a partner organization',
-					path: '/partner',
 				},
 			],
 		},
@@ -116,18 +111,24 @@ const Navbar = () => {
 			items: [
 				{
 					name: 'Donate',
-					description: 'Support our mission with a donation',
-					path: '/donate',
+					description: 'Support The Trevor Project Today',
+					path: '/be-the-one',
 				},
 				{
-					name: 'Corporate Partnerships',
-					description: 'Partner with us',
-					path: '/corporate-partnerships',
+					name: 'Fundraise',
+					description: 'Tap into your network and help us change the world',
+					path: '/fundraise',
 				},
 				{
-					name: 'Grants',
+					name: 'Donor Community',
 					description: 'Learn about our grant opportunities',
-					path: '/grants',
+					path: '/circle-of-light',
+				},
+				{
+					name: 'Commemorative Giving',
+					description:
+						'Make a tribute gift, leave a legacy, or create a memorial fundraiser in honour of a loved one',
+					path: '/commemorative-giving',
 				},
 			],
 		},
@@ -298,7 +299,7 @@ const Navbar = () => {
 								<IoSearch className='h-7 w-7' />
 							</button>
 							<Link
-								to='/meet-friends'
+								to='/visit-trevorspace'
 								className='bg-[#101066] hover:bg-white text-white px-6 py-3 rounded-full text-sm transition-colors inline-block hover:border-2 hover:border-[#101066] hover:text-[#101066] font-extrabold'>
 								Meet Friends
 							</Link>

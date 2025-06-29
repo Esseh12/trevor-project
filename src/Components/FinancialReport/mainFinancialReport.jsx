@@ -80,30 +80,34 @@ const MainFinancialReports = () => {
 	);
 
 	return (
-		<div className='max-w-7xl mx-auto p-4 py-10'>
+		<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10'>
 			{/* Sort Dropdown */}
-			<div className='mb-8 relative inline-block'>
+			<div className='mb-6 sm:mb-8 relative'>
 				<button
 					onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-					className='flex items-center gap-2 px-4 py-2 border border-[#003A48] rounded bg-white  transition-colors text-2xl font-semibold leading-8.5 text-[#003A48]'>
-					Sort By:{' '}
-					{sortOrder === 'newest' ? 'Newest to Oldest' : 'Oldest to Newest'}
+					className='flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-3 border border-[#003A48] rounded bg-white transition-colors text-lg sm:text-xl lg:text-2xl font-semibold text-[#003A48] w-full sm:w-auto justify-between sm:justify-start'>
+					<span className='truncate'>
+						Sort By:{' '}
+						{sortOrder === 'newest' ? 'Newest to Oldest' : 'Oldest to Newest'}
+					</span>
 					<IoIosArrowDown
-						className={`w-4 h-4 text-[#003A48] transition-transform ${
+						className={`w-4 h-4 sm:w-5 sm:h-5 text-[#003A48] transition-transform flex-shrink-0 ${
 							isDropdownOpen ? 'rotate-180' : ''
 						}`}
 					/>
 				</button>
 
 				{isDropdownOpen && (
-					<div className='absolute top-full left-0 mt-1 bg-white border border-[#003A48] rounded shadow-lg z-10 min-w-full'>
+					<div className='absolute top-full left-0 mt-1 bg-white border border-[#003A48] rounded shadow-lg z-10 w-full sm:min-w-full'>
 						<button
 							onClick={() => {
 								setSortOrder('newest');
 								setIsDropdownOpen(false);
 							}}
-							className={`w-full px-4 py-2 text-left font-semibold text-xl leading-7.5 ${
-								sortOrder === 'newest' ? 'text-[#003A48]' : ''
+							className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-left font-semibold text-base sm:text-lg lg:text-xl hover:bg-gray-50 transition-colors ${
+								sortOrder === 'newest'
+									? 'text-[#003A48] bg-gray-50'
+									: 'text-gray-700'
 							}`}>
 							Sort By: Newest to Oldest
 						</button>
@@ -112,8 +116,10 @@ const MainFinancialReports = () => {
 								setSortOrder('oldest');
 								setIsDropdownOpen(false);
 							}}
-							className={`w-full px-4 py-2 text-left font-semibold text-xl leading-7.5  ${
-								sortOrder === 'oldest' ? 'text-[#003A48]' : ''
+							className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-left font-semibold text-base sm:text-lg lg:text-xl hover:bg-gray-50 transition-colors ${
+								sortOrder === 'oldest'
+									? 'text-[#003A48] bg-gray-50'
+									: 'text-gray-700'
 							}`}>
 							Sort By: Oldest to Newest
 						</button>
@@ -122,27 +128,29 @@ const MainFinancialReports = () => {
 			</div>
 
 			{/* Reports Grid */}
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 space-y-8'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-6'>
 				{sortedReports.map((report) => (
 					<div
 						key={report.year}
-						className='border border-[#003A48] rounded-lg p-6 bg-white hover:shadow-md transition-shadow pb-36'>
-						<h2 className='text-3xl leading-10 font-semibold text-[#003A48] mb-8'>
+						className='border border-[#003A48] rounded-lg p-4 sm:p-6 bg-white hover:shadow-md transition-shadow min-h-[280px] sm:min-h-[320px] lg:min-h-[360px] flex flex-col'>
+						<h2 className='text-xl sm:text-2xl lg:text-3xl font-semibold text-[#003A48] mb-4 sm:mb-6 lg:mb-8 flex-shrink-0'>
 							{report.year} Annual Report
 						</h2>
 
-						<div className='space-y-8'>
+						<div className='space-y-3 sm:space-y-4 lg:space-y-6 flex-grow'>
 							{report.links.length > 0 ? (
 								report.links.map((link, index) => (
 									<Link
 										key={index}
 										to={link.href}
-										className='block font-semibold text-xl text-[#003A48] underline underline-offset-8 hover:decoration-wavy transition-colors'>
+										className='block font-semibold text-base sm:text-lg lg:text-xl text-[#003A48] underline underline-offset-4 sm:underline-offset-6 lg:underline-offset-8 hover:decoration-wavy transition-all duration-200 break-words'>
 										{link.text}
 									</Link>
 								))
 							) : (
-								<p className='text-gray-500 italic'>No documents available</p>
+								<p className='text-gray-500 italic text-sm sm:text-base'>
+									No documents available
+								</p>
 							)}
 						</div>
 					</div>
@@ -150,13 +158,13 @@ const MainFinancialReports = () => {
 			</div>
 
 			{/* Footer */}
-			<div className='mt-12 pt-8  text-lg leading-6.5 text-[#003A48]'>
-				<p>
+			<div className='mt-8 sm:mt-12 pt-6 sm:pt-8 text-sm sm:text-base lg:text-lg text-[#003A48]'>
+				<p className='leading-relaxed'>
 					The Trevor Project is a 501(c)(3), tax-exempt organization. Our EIN is
 					95-4681287.{' '}
 					<a
 						href='#'
-						className='text-[#003A48] font-semibold underline'>
+						className='text-[#003A48] font-semibold underline hover:decoration-wavy transition-all duration-200'>
 						Privacy Policy
 					</a>
 				</p>
