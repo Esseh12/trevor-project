@@ -3,7 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FiMenu } from 'react-icons/fi';
 import { IoIosArrowDown } from 'react-icons/io';
 import { IoClose, IoSearch } from 'react-icons/io5';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 import logo from '../assets/footer-logo.png';
+import scrollogo from '../assets/logo-trevor.png';
 
 const Navbar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -18,6 +20,20 @@ const Navbar = () => {
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
+
+	// Prevent body scroll when mobile menu is open
+	useEffect(() => {
+		if (isMobileMenuOpen) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'unset';
+		}
+
+		// Cleanup on unmount
+		return () => {
+			document.body.style.overflow = 'unset';
+		};
+	}, [isMobileMenuOpen]);
 
 	const menuItems = [
 		{
@@ -176,6 +192,7 @@ const Navbar = () => {
 
 	const handleSearchClick = () => {
 		navigate('/search');
+		setIsMobileMenuOpen(false);
 	};
 
 	return (
@@ -183,25 +200,19 @@ const Navbar = () => {
 			<nav
 				className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
 					isScrolled
-						? 'bg-white/90 backdrop-blur-sm shadow-sm'
+						? 'bg-white/40 backdrop-blur-sm shadow-sm'
 						: 'bg-transparent'
 				}`}>
 				<div className='max-w-full px-4 sm:px-6 lg:px-8 pt-2'>
-					<div className='flex items-center justify-between h-16 lg:h-20'>
+					<div className='flex items-center justify-between h-16 lg:h-14'>
 						{/* Logo */}
 						<div className='flex-shrink-0 z-10'>
 							<Link
 								to='/'
 								className='flex items-center'>
-								{/* Orange star - shows when scrolled OR on mobile when scrolled */}
-								{isScrolled && (
-									<div className='text-orange-500 text-2xl font-bold mr-2'>
-										✦
-									</div>
-								)}
 								{/* Trevor Project Logo - shows when not scrolled */}
 								{!isScrolled && (
-									<div>
+									<div className='mt-6'>
 										<img
 											src={logo}
 											alt='logo'
@@ -211,10 +222,12 @@ const Navbar = () => {
 								)}
 								{/* Trevor Project Logo - shows when scrolled with proper styling */}
 								{isScrolled && (
-									<div className='font-bold text-xl text-teal-800'>
-										<div className='w-48 h-12 bg-teal-800 rounded-lg flex items-center justify-center text-white text-sm'>
-											Trevor Project Logo
-										</div>
+									<div>
+										<img
+											src={scrollogo}
+											alt='logo'
+											className='w-14'
+										/>
 									</div>
 								)}
 							</Link>
@@ -231,30 +244,38 @@ const Navbar = () => {
 										onMouseLeave={handleMouseLeave}>
 										<button
 											onClick={() => toggleDropdown(index)}
-											className={`flex items-center px-3 py-2 text-sm font-medium transition-colors ${
+											className={`flex items-end px-3 py-2  transition-colors ${
 												isScrolled
-													? 'text-teal-800 hover:text-teal-600'
-													: 'text-white hover:text-gray-200'
+													? 'text-[#101066] font-semibold'
+													: 'text-white font-semibold'
 											}`}>
 											{item.title}
-											<IoIosArrowDown className='ml-1 h-4 w-4' />
+											<IoIosArrowDown className='ml-1 h-4 w-4 text-white/80' />
 										</button>
 
 										{activeDropdown === index && (
-											<div className='absolute top-full left-0 mt-1 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50'>
+											<div className='absolute top-full left-0 mt-1 min-w-[400px] bg-white rounded-lg shadow-lg border border-gray-200 z-50'>
 												{/* Triangle pointer */}
 												<div className='absolute -top-2 left-6 w-4 h-4 bg-white border-l border-t border-gray-200 transform rotate-45'></div>
-												<div className='py-2'>
+
+												{/* Dropdown Content */}
+												<div
+													className={`py-2 ${
+														item.items.length > 3
+															? 'grid grid-cols-2 gap-2'
+															: 'flex flex-col'
+													}`}>
 													{item.items.map((subItem, subIndex) => (
 														<Link
 															key={subIndex}
 															to={subItem.path}
 															onClick={() => handleNavigation(subItem.path)}
-															className='block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 transition-colors'>
-															<div className='font-medium text-teal-800'>
-																{subItem.name}
+															className='block px-4 py-3 transition-colors'>
+															<div className='font-bold text-lg leading-4.5 text-[#101066] flex items-center'>
+																<span>{subItem.name}</span>
+																<MdKeyboardArrowRight className='font-bold text-xl' />
 															</div>
-															<div className='text-gray-600 text-xs mt-1'>
+															<div className='text-[#101066] leading-5 text-sm mt-1'>
 																{subItem.description}
 															</div>
 														</Link>
@@ -272,25 +293,23 @@ const Navbar = () => {
 							<button
 								onClick={handleSearchClick}
 								className={`p-2 rounded-full transition-colors ${
-									isScrolled
-										? 'text-teal-800 hover:text-teal-600'
-										: 'text-white hover:text-gray-200'
+									isScrolled ? 'text-[#101066]' : 'text-white'
 								}`}>
-								<IoSearch className='h-5 w-5' />
+								<IoSearch className='h-7 w-7' />
 							</button>
 							<Link
 								to='/meet-friends'
-								className='bg-purple-700 hover:bg-purple-800 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors inline-block'>
+								className='bg-[#101066] hover:bg-white text-white px-6 py-3 rounded-full text-sm transition-colors inline-block hover:border-2 hover:border-[#101066] hover:text-[#101066] font-extrabold'>
 								Meet Friends
 							</Link>
 							<Link
 								to='/crisis-services'
-								className='bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors inline-block'>
+								className='bg-[#101066] hover:bg-white text-white px-6 py-3 rounded-full text-sm  transition-colors inline-block hover:border-2 hover:border-[#101066] hover:text-[#101066] font-extrabold'>
 								Reach A Counselor
 							</Link>
 							<Link
 								to='/donate'
-								className='bg-purple-800 hover:bg-purple-900 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors inline-block'>
+								className='bg-[#101066] hover:bg-white hover:border-2 hover:border-[#101066] hover:text-[#101066]  text-white px-6 py-3 rounded-full text-sm transition-colors inline-block font-extrabold'>
 								Donate
 							</Link>
 						</div>
@@ -313,29 +332,46 @@ const Navbar = () => {
 						</div>
 					</div>
 				</div>
+			</nav>
 
-				{/* Mobile Menu */}
-				{isMobileMenuOpen && (
-					<div className='lg:hidden'>
-						<div className='bg-white border-t border-gray-200'>
-							<div className='px-4 py-3 space-y-1'>
+			{/* Mobile Sidebar Overlay */}
+			{isMobileMenuOpen && (
+				<div className='lg:hidden fixed inset-0 z-40'>
+					{/* Sidebar */}
+					<div
+						className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
+							isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+						}`}>
+						{/* Header */}
+						<div className='flex items-center justify-between p-4 border-b border-gray-200'>
+							<div className='font-bold text-xl text-teal-800'>Menu</div>
+							<button
+								onClick={() => setIsMobileMenuOpen(false)}
+								className='p-2 rounded-md text-teal-800 hover:text-teal-600 transition-colors'>
+								<IoClose className='h-6 w-6' />
+							</button>
+						</div>
+
+						{/* Content */}
+						<div className='h-full overflow-y-auto pb-20'>
+							<div className='px-4 py-4 space-y-1'>
 								{/* Main action buttons */}
 								<Link
 									to='/donate'
 									onClick={() => setIsMobileMenuOpen(false)}
-									className='block w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg text-sm font-medium mb-2 text-center'>
+									className='block w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg text-sm font-medium mb-2 text-center transition-colors'>
 									Donate
 								</Link>
 								<Link
 									to='/crisis-services'
 									onClick={() => setIsMobileMenuOpen(false)}
-									className='block w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg text-sm font-medium mb-2 text-center'>
+									className='block w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg text-sm font-medium mb-2 text-center transition-colors'>
 									Reach A Counselor
 								</Link>
 								<Link
 									to='/meet-friends'
 									onClick={() => setIsMobileMenuOpen(false)}
-									className='block w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg text-sm font-medium mb-4 text-center'>
+									className='block w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg text-sm font-medium mb-4 text-center transition-colors'>
 									Meet Friends
 								</Link>
 
@@ -378,7 +414,7 @@ const Navbar = () => {
 								<div className='pt-3 border-t border-gray-200'>
 									<button
 										onClick={handleSearchClick}
-										className='w-full flex items-center justify-center py-3 text-teal-800 font-medium'>
+										className='w-full flex items-center justify-center py-3 text-teal-800 font-medium hover:text-teal-600 transition-colors'>
 										<IoSearch className='h-5 w-5 mr-2' />
 										Search
 									</button>
@@ -386,8 +422,8 @@ const Navbar = () => {
 							</div>
 						</div>
 					</div>
-				)}
-			</nav>
+				</div>
+			)}
 		</div>
 	);
 };
