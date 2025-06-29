@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import Navbar from './Components/navbar';
 import HomePage from './Pages/home';
 import Blogs from './Pages/Blog';
 import Research from './Pages/Reasearch';
@@ -15,6 +16,7 @@ import ContactUs from './Pages/contactUs';
 function App() {
 	return (
 		<div className='App'>
+			<Navbar />
 			<Routes>
 				<Route
 					path='/'
