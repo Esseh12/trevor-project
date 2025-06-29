@@ -98,7 +98,7 @@ const MainFinancialReports = () => {
 				</button>
 
 				{isDropdownOpen && (
-					<div className='absolute top-full left-0 mt-1 bg-white border border-[#003A48] rounded shadow-lg z-10 w-full sm:min-w-full'>
+					<div className='absolute top-full left-0 mt-1 bg-white border border-[#003A48] rounded shadow-lg z-10 w-full'>
 						<button
 							onClick={() => {
 								setSortOrder('newest');

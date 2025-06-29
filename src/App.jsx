@@ -13,6 +13,7 @@ import PublicEducation from './Pages/publicEducation';
 import PeerSupport from './Pages/peerSuppoert';
 import ContactUs from './Pages/contactUs';
 import FinancialReport from './Pages/financialReport';
+import CommemorativeGiving from './Pages/commemorativeGiving';
 
 function App() {
 	return (
@@ -68,8 +69,12 @@ function App() {
 					element={<ContactUs />}
 				/>
 				<Route
-					path='financial-reports'
+					path='/financial-reports'
 					element={<FinancialReport />}
+				/>
+				<Route
+					path='/commemorative-giving'
+					element={<CommemorativeGiving />}
 				/>
 			</Routes>
 		</div>

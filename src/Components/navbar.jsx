@@ -144,7 +144,7 @@ const Navbar = () => {
 					name: 'News Press',
 					description:
 						"Get the latest news and press release from what's happening in our field",
-					path: '/news-press',
+					path: '/press',
 				},
 				{
 					name: 'Research Briefs',
