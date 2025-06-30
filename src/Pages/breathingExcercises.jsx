@@ -2,13 +2,14 @@ import { IoIosArrowDown } from 'react-icons/io';
 import chat from '../assets/TTP_Icons_Indigo_Chat.svg';
 import call from '../assets/TTP_Icons_Indigo_Call.svg';
 import text from '../assets/TTP_Icons_Indigo_Text.svg';
+import NotReadyToTalk from '../Components/ReachCounselor/NotReadyToTalk';
 import Footer from '../Components/footer';
 
 const BreathingExercise = () => {
 	return (
 		<>
-			<main>
-				<div className='min-h-screen bg-gradient-to-br from-pink-200 via-orange-200 to-yellow-200 flex flex-col items-center justify-center px-12 sm:px-8 md:px-4 py-14 sm:py-10 md:py-8'>
+			<main className=''>
+				<div className='min-h-screen md:min-h-[95vh] bg-gradient-to-br from-pink-200 via-orange-200 to-yellow-200 flex flex-col items-center justify-center px-12 sm:px-8 md:px-4 pb-12 pt-48  md:py-0'>
 					{/* Hero Section */}
 					<div className='text-center mb-12 max-w-4xl'>
 						<h1 className='text-3xl md:text-4xl lg:text-[40px] font-bold text-[#101066] mb-4'>
@@ -69,6 +70,7 @@ const BreathingExercise = () => {
 						<IoIosArrowDown className='text-4xl text-[#101066]' />
 					</div>
 				</div>
+				<NotReadyToTalk />
 			</main>
 			<Footer />
 		</>
