@@ -8,7 +8,7 @@ import image6 from '../../assets/TTP_Individual_Breanna_Homepage-scaled.jpg';
 const Hero = () => {
 	return (
 		<>
-			<section className='bg-[#ff5a3d] relative overflow-hidden pt-20'>
+			<section className='bg-[#ff5a3d] relative overflow-hidden pt-44 '>
 				<div className='max-w-7xl py-16 flex items-center min-h-screen'>
 					<div className='flex w-full items-center justify-between absolute pl-36'>
 						{/* Left Content */}

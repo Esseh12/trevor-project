@@ -161,7 +161,7 @@ const Navbar = () => {
 				{
 					name: 'Mental Health Survey',
 					description: 'Understand the mental health of LGBTQ+ young people',
-					path: '/mental-health-survey',
+					path: '/survey-international',
 				},
 				{
 					name: 'Resource Center',

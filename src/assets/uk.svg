@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid meet">
+  <path d="M60 0H0v30h60V0Z" fill="#006"/>
+  <path d="M0 0v3.35L53.3 30H60v-3.35L6.7 0H0Zm60 0v3.35L6.7 30H0v-3.35L53.3 0H60Z" fill="#fff"/>
+  <path d="M25 0v30h10V0H25ZM0 10v10h60V10H0Z" fill="#fff"/>
+  <path d="M0 12v6h60v-6H0ZM27 0v30h6V0h-6ZM0 30l20-10h4.47l-20 10H0ZM0 0l20 10h-4.47L0 2.24V0Zm35.53 10 20-10H60L40 10h-4.47ZM60 30 40 20h4.47L60 27.76V30Z" fill="#c00"/>
+</svg>

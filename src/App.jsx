@@ -15,6 +15,7 @@ import ContactUs from './Pages/contactUs';
 import FinancialReport from './Pages/financialReport';
 import CommemorativeGiving from './Pages/commemorativeGiving';
 import ReachCounselor from './Pages/reachCounsellor';
+import MentalHealthSurvey from './Pages/mentalHealthSurvey';
 
 function App() {
 	return (
@@ -80,6 +81,14 @@ function App() {
 				<Route
 					path='/get-help'
 					element={<ReachCounselor />}
+				/>
+				<Route
+					path='/survey-international'
+					element={<MentalHealthSurvey />}
+				/>
+				<Route
+					path='*'
+					element={<HomePage />}
 				/>
 			</Routes>
 		</div>
