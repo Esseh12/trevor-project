@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import Navbar from './Components/navbar';
 import HomePage from './Pages/home';
 import Blogs from './Pages/Blog';
@@ -17,6 +19,7 @@ import CommemorativeGiving from './Pages/commemorativeGiving';
 import ReachCounselor from './Pages/reachCounsellor';
 import MentalHealthSurvey from './Pages/mentalHealthSurvey';
 import DonorCommunity from './Pages/donorCommunity';
+import MainReasearch from './Pages/mainResearch';
 
 function App() {
 	return (
@@ -90,6 +93,10 @@ function App() {
 				<Route
 					path='/circle-of-light'
 					element={<DonorCommunity />}
+				/>
+				<Route
+					path='/research'
+					element={<MainReasearch />}
 				/>
 				<Route
 					path='*'
