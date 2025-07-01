@@ -16,6 +16,7 @@ import FinancialReport from './Pages/financialReport';
 import CommemorativeGiving from './Pages/commemorativeGiving';
 import ReachCounselor from './Pages/reachCounsellor';
 import MentalHealthSurvey from './Pages/mentalHealthSurvey';
+import DonorCommunity from './Pages/donorCommunity';
 
 function App() {
 	return (
@@ -85,6 +86,10 @@ function App() {
 				<Route
 					path='/survey-international'
 					element={<MentalHealthSurvey />}
+				/>
+				<Route
+					path='/circle-of-light'
+					element={<DonorCommunity />}
 				/>
 				<Route
 					path='*'
