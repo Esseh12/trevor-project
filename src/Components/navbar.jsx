@@ -167,7 +167,7 @@ const Navbar = () => {
 					name: 'Resource Center',
 					description:
 						'Explore resources for allyship, sexual orientation, gender identity, mental health, and many more',
-					path: '/resource-center',
+					path: '/resources',
 				},
 			],
 		},

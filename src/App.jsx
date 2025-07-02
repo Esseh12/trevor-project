@@ -20,6 +20,7 @@ import ReachCounselor from './Pages/reachCounsellor';
 import MentalHealthSurvey from './Pages/mentalHealthSurvey';
 import DonorCommunity from './Pages/donorCommunity';
 import MainReasearch from './Pages/mainResearch';
+import Resources from './Pages/resources';
 
 function App() {
 	return (
@@ -101,6 +102,10 @@ function App() {
 				<Route
 					path='*'
 					element={<HomePage />}
+				/>
+				<Route
+					path='/resources'
+					element={<Resources />}
 				/>
 			</Routes>
 		</div>
