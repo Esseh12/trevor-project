@@ -1,27 +1,30 @@
-import dayAndNight from '../../assets/TTP_BrandIllustrations_DayAndNight_Square.png';
+import supportIllustration from '../../assets/TTP_BrandIllustrations_DayAndNight_Square.png';
 
-const TrainedCounsellor = () => {
+export default function TrainedCounsellor() {
 	return (
-		<section className='py-12 flex relative overflow-hidden min-h-screen'>
-			<div className='w-[700px] -left-8 top-24 absolute z-20'>
-				<img
-					src={dayAndNight}
-					alt='day and night'
-					className=' rounded-2xl'
-				/>
-			</div>
+		<section className='relative py-16 lg:py-24 lg:pb-80 overflow-hidden lg:mb-20'>
+			<div className='flex flex-col lg:flex-row items-start relative gap-8 lg:gap-0'>
+				{/* Image Section */}
+				<div className='relative w-full max-w-md sm:max-w-lg lg:max-w-2xl mx-auto px-4 lg:px-0 lg:absolute lg:-left-8 lg:top-40 z-10 mb-10 lg:mb-0'>
+					<img
+						src={supportIllustration}
+						alt='Illustration of people supporting each other in a healing circle'
+						className='w-full h-auto rounded-2xl object-contain'
+					/>
+				</div>
 
-			<div className='relative -right-8 ml-auto w-2/3 z-10 flex flex-col justify-center items-center bg-[#dbd5ff] h-[550px] rounded-2xl gap-4'>
-				<h1 className='font-semibold text-[42px] leading-12 max-w-xl text-center'>
-					Reach out to one of our trained counselors.
-				</h1>
-				<p className='text-2xl leading-9 max-w-2xl text-center'>
-					Call, text, or chat with us anytime you need support. If you are
-					thinking about suicide, or feeling lonely, we’re here to listen.
-				</p>
+				{/* Content Section */}
+				<div className='relative z-0 bg-[#dbd5ff] w-full lg:w-[65%] lg:ml-auto p-6 sm:p-8 md:p-12 lg:p-24 rounded-2xl'>
+					<h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-[38px] font-semibold text-[#101066] leading-snug mb-6 text-center max-w-xl mx-auto'>
+						Reach out to one of our trained counselors.
+					</h2>
+
+					<p className='text-sm sm:text-base md:text-lg lg:text-xl text-[#101066] leading-relaxed mb-8 max-w-3xl mx-auto text-center'>
+						Call, text, or chat with us anytime you need support. If you are
+						thinking about suicide, or feeling lonely, we’re here to listen.
+					</p>
+				</div>
 			</div>
 		</section>
 	);
-};
-
-export default TrainedCounsellor;
+}

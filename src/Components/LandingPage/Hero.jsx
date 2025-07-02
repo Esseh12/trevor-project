@@ -8,53 +8,51 @@ import image6 from '../../assets/TTP_Individual_Breanna_Homepage-scaled.jpg';
 const Hero = () => {
 	return (
 		<>
-			<section className='bg-[#ff5a3d] relative overflow-hidden pt-44 '>
-				<div className='max-w-7xl py-16 flex items-center min-h-screen'>
-					<div className='flex w-full items-center justify-between absolute pl-36'>
+			<section className='bg-[#ff5a3d] relative overflow-hidden pt-26 -mb-32'>
+				<div className='max-w-7xl py-8 flex items-center min-h-screen'>
+					<div className='flex w-full items-center justify-between absolute pl-60'>
 						{/* Left Content */}
-						<div className='relative text-white text-left max-w-7xl z-30 ml-5'>
-							<div className='font-semibold text-7xl leading-tight mb-8'>
+						<div className='relative text-white text-left max-w-7xl z-30 ml-5 lg:ml-5 md:ml-0 sm:ml-0 md:max-w-full sm:max-w-full md:px-4 sm:px-4'>
+							<div className='font-semibold text-6xl lg:text-6xl md:text-4xl sm:text-3xl leading-tight mb-8'>
 								<h1>You deserve a </h1>
-								<span className='font-bold text-[100px] caveat'>
+								<span className='font-bold text-[82px] lg:text-[82px] md:text-5xl sm:text-4xl caveat'>
 									welcoming, loving world.
 								</span>
 							</div>
-							<p className='text-2xl leading-relaxed max-w-xl'>
+							<p className='text-xl lg:text-xl md:text-lg sm:text-base leading-8 max-w-md lg:max-w-md md:max-w-full sm:max-w-full'>
 								And so do the people you care about. Here you can reach out to a
 								counselor if you're struggling, find answers and information,
 								and get the tools you need to help someone else.
 							</p>
 						</div>
 
-						{/* Right Images */}
-						<div className='absolute flex-shrink-0 z-10 right-24 mt-5'>
+						{/* Right Images - DESKTOP ONLY - Keep exactly as original */}
+						<div className='absolute flex-shrink-0 z-10 right-0 mt-8 pr-8 hidden lg:block'>
 							{/* First Image - Top, Tilted Left */}
-							<div className='relative z-10 mb-4'>
+							<div className='relative z-10 mb-4 right-40 top-8'>
 								<img
 									src={image1}
 									alt='Smiling person in yellow cardigan'
-									className='w-[26rem] h-[26rem] object-cover rounded-lg shadow-lg transform -rotate-12'
+									className='w-[21rem] h-[21rem] object-cover rounded-lg shadow-lg transform -rotate-6'
 								/>
 							</div>
 
-							{/* Second Image - Bottom Right, Overlapping, Coming from Right Edge */}
-							<div className='relative z-20 -mt-32 ml-40 overflow-x-hidden'>
+							{/* Second Image - Appearing from Right Edge */}
+							<div className='relative z-20 -mt-32 -mr-10'>
 								<img
 									src={image2}
 									alt='Smiling person'
-									className='w-[30rem] h-[32rem] object-cover rounded-lg'
+									className='w-[30rem] h-[32rem] object-cover rounded-lg shadow-lg'
 								/>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				{/* Bottom Collage Section - Separate from hero */}
-
-				<div className='relative min-h-screen'>
+				{/* Bottom Collage Section - DESKTOP ONLY - Keep exactly as original */}
+				<div className='relative min-h-screen hidden lg:block'>
 					{/* Left Image - Black person in pink top */}
 					<div className='absolute -left-9 top-0 w-96 h-[30rem] z-10 '>
-						{/* Placeholder for left image */}
 						<img
 							src={image3}
 							alt=' Black person in pink top'
@@ -71,7 +69,7 @@ const Hero = () => {
 						/>
 					</div>
 
-					{/* Right Image - Person in red/burgundy */}
+					{/* Right Image - Person in red/burgundy overlapping image*/}
 					<div className='absolute left-2/3 -translate-x-[30%] -bottom-8 w-[26rem] h-[30rem] z-10 transform rotate-12'>
 						<img
 							src={image6}
@@ -86,6 +84,54 @@ const Hero = () => {
 							alt=' Black person in pink top'
 							className='w-md h-[30rem] object-cover rounded-lg shadow-lg transform '
 						/>
+					</div>
+				</div>
+
+				{/* MOBILE/TABLET ONLY - All images at bottom */}
+				<div className='block lg:hidden pt-8 pb-16'>
+					<div className='grid grid-cols-2 md:grid-cols-3 gap-4 px-4 max-w-4xl mx-auto'>
+						<div className='relative'>
+							<img
+								src={image1}
+								alt='Smiling person in yellow cardigan'
+								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+							/>
+						</div>
+						<div className='relative'>
+							<img
+								src={image2}
+								alt='Smiling person'
+								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+							/>
+						</div>
+						<div className='relative'>
+							<img
+								src={image3}
+								alt='Black person in pink top'
+								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+							/>
+						</div>
+						<div className='relative'>
+							<img
+								src={image4}
+								alt='Black person in pink top'
+								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+							/>
+						</div>
+						<div className='relative'>
+							<img
+								src={image5}
+								alt='Black person in pink top'
+								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+							/>
+						</div>
+						<div className='relative'>
+							<img
+								src={image6}
+								alt='Black person in pink top'
+								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+							/>
+						</div>
 					</div>
 				</div>
 			</section>
