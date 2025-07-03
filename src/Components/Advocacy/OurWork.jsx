@@ -105,7 +105,7 @@ const OurWork = () => {
 	};
 
 	return (
-		<div className='min-h-screen mt-64'>
+		<div className='min-h-screen mt-24 sm:mt-32 md:mt-64'>
 			{/* Content */}
 			<div className='py-12'>
 				{/* Title */}

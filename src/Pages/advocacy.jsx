@@ -2,6 +2,7 @@ import heroImg from '../assets/TTP_BrandIllustrations_ShowYourPride_Horizontal.w
 import Hero from '../Components/Volunteer/Hero';
 import OurWork from '../Components/Advocacy/OurWork';
 import AdvocacyInAction from '../Components/Advocacy/AdvocacyInAction';
+import AdvocacyResources from '../Components/Advocacy/AdvocacyResources';
 import QrCode from '../Components/Advocacy/qrcode';
 import Testimonial from '../Components/Advocacy/testimonial';
 import Footer from '../Components/footer';
@@ -18,6 +19,7 @@ const Advocacy = () => {
 				/>
 				<OurWork />
 				<AdvocacyInAction />
+				<AdvocacyResources />
 				<QrCode />
 				<Testimonial />
 			</main>
