@@ -21,6 +21,7 @@ import MentalHealthSurvey from './Pages/mentalHealthSurvey';
 import DonorCommunity from './Pages/donorCommunity';
 import MainReasearch from './Pages/mainResearch';
 import Resources from './Pages/resources';
+import Donate from './Pages/donate';
 
 function App() {
 	return (
@@ -106,6 +107,10 @@ function App() {
 				<Route
 					path='/resources'
 					element={<Resources />}
+				/>
+				<Route
+					path='/be-the-one'
+					element={<Donate />}
 				/>
 			</Routes>
 		</div>
