@@ -22,6 +22,7 @@ import DonorCommunity from './Pages/donorCommunity';
 import MainReasearch from './Pages/mainResearch';
 import Resources from './Pages/resources';
 import Donate from './Pages/donate';
+import Advocacy from './Pages/advocacy';
 
 function App() {
 	return (
@@ -101,16 +102,20 @@ function App() {
 					element={<MainReasearch />}
 				/>
 				<Route
-					path='*'
-					element={<HomePage />}
-				/>
-				<Route
 					path='/resources'
 					element={<Resources />}
 				/>
 				<Route
 					path='/be-the-one'
 					element={<Donate />}
+				/>
+				<Route
+					path='/advocacy'
+					element={<Advocacy />}
+				/>
+				<Route
+					path='*'
+					element={<HomePage />}
 				/>
 			</Routes>
 		</div>
