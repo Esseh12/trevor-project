@@ -10,10 +10,10 @@ const Hero = () => {
 		<>
 			<section className='bg-[#ff5a3d] relative overflow-hidden pt-26 -mb-32'>
 				<div className='max-w-7xl py-8 flex items-center min-h-screen'>
-					<div className='flex w-full items-center justify-between absolute pl-60'>
+					<div className='flex w-full items-center justify-between absolute md:pl-60'>
 						{/* Left Content */}
 						<div className='relative text-white text-left max-w-7xl z-30 ml-5 lg:ml-5 md:ml-0 sm:ml-0 md:max-w-full sm:max-w-full md:px-4 sm:px-4'>
-							<div className='font-semibold text-6xl lg:text-6xl md:text-4xl sm:text-3xl leading-tight mb-8'>
+							<div className='font-semibold text-2xl lg:text-6xl md:text-4xl sm:text-3xl leading-tight mb-8'>
 								<h1>You deserve a </h1>
 								<span className='font-bold text-[82px] lg:text-[82px] md:text-5xl sm:text-4xl caveat'>
 									welcoming, loving world.
@@ -89,47 +89,58 @@ const Hero = () => {
 
 				{/* MOBILE/TABLET ONLY - All images at bottom */}
 				<div className='block lg:hidden pt-8 pb-16'>
-					<div className='grid grid-cols-2 md:grid-cols-3 gap-4 px-4 max-w-4xl mx-auto'>
-						<div className='relative'>
+					<div className='relative px-4 max-w-4xl mx-auto min-h-[500px]'>
+						{/* Image 1 - Bottom left */}
+						<div className='absolute left-4 bottom-0 w-32 h-40 md:w-40 md:h-48 z-10'>
 							<img
 								src={image1}
 								alt='Smiling person in yellow cardigan'
-								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+								className='w-full h-full object-cover rounded-lg shadow-lg'
 							/>
 						</div>
-						<div className='relative'>
+
+						{/* Image 2 - Center left, overlapping */}
+						<div className='absolute left-12 bottom-24 w-28 h-36 md:w-36 md:h-44 z-20'>
 							<img
 								src={image2}
 								alt='Smiling person'
-								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+								className='w-full h-full object-cover rounded-lg shadow-lg'
 							/>
 						</div>
-						<div className='relative'>
+
+						{/* Image 3 - Top center */}
+						<div className='absolute left-1/2 top-0 transform -translate-x-1/2 w-36 h-44 md:w-44 md:h-52 z-30'>
 							<img
 								src={image3}
 								alt='Black person in pink top'
-								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+								className='w-full h-full object-cover rounded-lg shadow-lg'
 							/>
 						</div>
-						<div className='relative'>
+
+						{/* Image 4 - Center right, largest */}
+						<div className='absolute right-4 top-16 w-40 h-48 md:w-48 md:h-56 z-40'>
 							<img
 								src={image4}
 								alt='Black person in pink top'
-								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+								className='w-full h-full object-cover rounded-lg shadow-lg'
 							/>
 						</div>
-						<div className='relative'>
+
+						{/* Image 5 - Bottom center */}
+						<div className='absolute left-1/2 bottom-8 transform -translate-x-1/2 w-32 h-40 md:w-40 md:h-48 z-15'>
 							<img
 								src={image5}
 								alt='Black person in pink top'
-								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+								className='w-full h-full object-cover rounded-lg shadow-lg'
 							/>
 						</div>
-						<div className='relative'>
+
+						{/* Image 6 - Bottom right */}
+						<div className='absolute right-8 bottom-32 w-28 h-36 md:w-36 md:h-44 z-25'>
 							<img
 								src={image6}
 								alt='Black person in pink top'
-								className='w-full h-48 md:h-56 object-cover rounded-lg shadow-lg'
+								className='w-full h-full object-cover rounded-lg shadow-lg'
 							/>
 						</div>
 					</div>
