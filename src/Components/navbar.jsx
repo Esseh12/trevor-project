@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { menuItems } from './data';
 import { FiMenu } from 'react-icons/fi';
 import { IoIosArrowDown } from 'react-icons/io';
 import { IoClose, IoSearch } from 'react-icons/io5';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import { IoMdArrowDropdown } from 'react-icons/io';
 import logo from '../assets/footer-logo.png';
 import scrollogo from '../assets/logo-trevor.png';
 
@@ -34,144 +36,6 @@ const Navbar = () => {
 			document.body.style.overflow = 'unset';
 		};
 	}, [isMobileMenuOpen]);
-
-	const menuItems = [
-		{
-			title: 'Who We Are',
-			items: [
-				{
-					name: 'Pride',
-					description: 'Celebrate Pride with us',
-					path: '/pride',
-				},
-				{
-					name: 'Financial Reports',
-					description: 'Look at our yearly annual financial statements',
-					path: '/financial-reports',
-				},
-				{
-					name: 'Contact Us',
-					description: 'Reach out to one of our team members',
-					path: '/contact-us',
-				},
-			],
-		},
-		{
-			title: 'What We Do',
-			items: [
-				{
-					name: 'Crisis Services',
-					description:
-						'We provide counseling support for LGBTQ+ young people 24/7, all year round',
-					path: '/crisis-services',
-				},
-				{
-					name: 'Peer Support',
-					description:
-						'We provide an affirming international community for LGBTQ+ young people',
-					path: '/visit-trevorspace',
-				},
-				{
-					name: 'Advocacy',
-					description:
-						'We work to change hearts, minds, and laws in support of young LGBTQ+ lives',
-					path: '/advocacy',
-				},
-				{
-					name: 'Public Education',
-					description:
-						'We help allies and educators understand the needs of LGBTQ+ young people',
-					path: '/public-education',
-				},
-				{
-					name: 'Research',
-					description:
-						'We conduct research studies to equip policymakers and other LGBTQ+ youth facing professionals',
-					path: '/research',
-				},
-			],
-		},
-		{
-			title: 'Get Involved',
-			items: [
-				{
-					name: 'Partner With Us',
-					description: 'Join our list of amazing partners',
-					path: '/partner-with-us',
-				},
-				{
-					name: 'Volunteer',
-					description: 'Apply to join us in supporting young LGBTQ+ lives',
-					path: '/volunteer',
-				},
-			],
-		},
-		{
-			title: 'Support Us',
-			items: [
-				{
-					name: 'Donate',
-					description: 'Support The Trevor Project Today',
-					path: '/be-the-one',
-				},
-				{
-					name: 'Fundraise',
-					description: 'Tap into your network and help us change the world',
-					path: '/fundraise',
-				},
-				{
-					name: 'Donor Community',
-					description: 'Learn about our grant opportunities',
-					path: '/circle-of-light',
-				},
-				{
-					name: 'Commemorative Giving',
-					description:
-						'Make a tribute gift, leave a legacy, or create a memorial fundraiser in honour of a loved one',
-					path: '/commemorative-giving',
-				},
-			],
-		},
-		{
-			title: 'Resources',
-			items: [
-				{
-					name: 'Blog',
-					description: "Get the latest news from what's happening in our field",
-					path: '/blog',
-				},
-				{
-					name: 'News Press',
-					description:
-						"Get the latest news and press release from what's happening in our field",
-					path: '/press',
-				},
-				{
-					name: 'Research Briefs',
-					description:
-						'Get the latest research and clinical implications related to LGBTQ+ youth and suicide risks',
-					path: '/research-briefs',
-				},
-				{
-					name: 'Breathing Exercise',
-					description:
-						'Try this calming exercise that will help you relax and focus',
-					path: '/breathing-exercise',
-				},
-				{
-					name: 'Mental Health Survey',
-					description: 'Understand the mental health of LGBTQ+ young people',
-					path: '/survey-international',
-				},
-				{
-					name: 'Resource Center',
-					description:
-						'Explore resources for allyship, sexual orientation, gender identity, mental health, and many more',
-					path: '/resources',
-				},
-			],
-		},
-	];
 
 	const toggleDropdown = (index) => {
 		setActiveDropdown(activeDropdown === index ? null : index);
@@ -213,7 +77,7 @@ const Navbar = () => {
 								className='flex items-center'>
 								{/* Trevor Project Logo - shows when not scrolled */}
 								{!isScrolled && (
-									<div className='mt-6'>
+									<div className='mt-6 lg:mt-12'>
 										<img
 											src={logo}
 											alt='logo'
@@ -251,13 +115,22 @@ const Navbar = () => {
 													: 'text-white font-semibold'
 											}`}>
 											{item.title}
-											<IoIosArrowDown className='ml-1 h-4 w-4 text-white/80' />
+											{isScrolled ? (
+												<IoMdArrowDropdown className='ml-1 h-4 w-4 text-[#101066]' />
+											) : (
+												<IoIosArrowDown className='ml-1 h-4 w-4 text-white/80' />
+											)}
 										</button>
 
 										{activeDropdown === index && (
-											<div className='absolute top-full left-0 mt-1 min-w-[400px] bg-white rounded-lg shadow-lg border border-gray-200 z-50'>
+											<div
+												className={`absolute top-full left-0 mt-1 bg-white rounded-lg shadow-lg border border-gray-200 z-50 ${
+													item.items.length <= 3
+														? 'w-max min-w-[300px]'
+														: 'w-[450px]'
+												}`}>
 												{/* Triangle pointer */}
-												<div className='absolute -top-2 left-6 w-4 h-4 bg-white border-l border-t border-gray-200 transform rotate-45'></div>
+												<div className='absolute -top-2 left-6 w-4 h-4 bg-white/40  border-l border-t border-gray-200 transform rotate-45'></div>
 
 												{/* Dropdown Content */}
 												<div
@@ -271,7 +144,7 @@ const Navbar = () => {
 															key={subIndex}
 															to={subItem.path}
 															onClick={() => handleNavigation(subItem.path)}
-															className='block px-4 py-3 transition-colors'>
+															className='block px-4 py-3 transition-colors hover:bg-gray-50'>
 															<div className='font-bold text-lg leading-4.5 text-[#101066] flex items-center'>
 																<span>{subItem.name}</span>
 																<MdKeyboardArrowRight className='font-bold text-xl' />
@@ -290,29 +163,63 @@ const Navbar = () => {
 						</div>
 
 						{/* Right side buttons */}
-						<div className='hidden lg:flex items-center space-x-3'>
-							<button
-								onClick={handleSearchClick}
-								className={`p-2 rounded-full transition-colors ${
-									isScrolled ? 'text-[#101066]' : 'text-white'
-								}`}>
-								<IoSearch className='h-7 w-7' />
-							</button>
-							<Link
-								to='/visit-trevorspace'
-								className='bg-[#101066] hover:bg-white text-white px-6 py-3 rounded-full text-sm transition-colors inline-block hover:border-2 hover:border-[#101066] hover:text-[#101066] font-extrabold'>
-								Meet Friends
-							</Link>
-							<Link
-								to='/get-help'
-								className='bg-[#101066] hover:bg-white text-white px-6 py-3 rounded-full text-sm  transition-colors inline-block hover:border-2 hover:border-[#101066] hover:text-[#101066] font-extrabold'>
-								Reach A Counselor
-							</Link>
-							<Link
-								to='/donate'
-								className='bg-[#101066] hover:bg-white hover:border-2 hover:border-[#101066] hover:text-[#101066]  text-white px-6 py-3 rounded-full text-sm transition-colors inline-block font-extrabold'>
-								Donate
-							</Link>
+						<div className='hidden lg:flex items-center'>
+							{/* When not scrolled - vertical stack with search icon */}
+							{!isScrolled && (
+								<div className='flex items-start space-x-4 mr-4 mt-28'>
+									{/* Search icon positioned between navlinks and buttons */}
+									<button
+										onClick={handleSearchClick}
+										className='p-2 rounded-full transition-colors text-white mt-2'>
+										<IoSearch className='h-7 w-7' />
+									</button>
+
+									{/* Stacked buttons */}
+									<div className='flex flex-col space-y-2'>
+										<Link
+											to='/visit-trevorspace'
+											className='bg-[#101066] hover:bg-white text-white px-6 py-3 rounded-full text-sm transition-colors inline-block hover:border-2 hover:border-[#101066] hover:text-[#101066] font-extrabold'>
+											Meet Friends
+										</Link>
+										<Link
+											to='/get-help'
+											className='bg-[#101066] hover:bg-white text-white px-6 py-3 rounded-full text-sm  transition-colors inline-block hover:border-2 hover:border-[#101066] hover:text-[#101066] font-extrabold'>
+											Reach A Counselor
+										</Link>
+										<Link
+											to='/donate'
+											className='bg-[#101066] hover:bg-white hover:border-2 hover:border-[#101066] hover:text-[#101066]  text-white px-6 py-3 rounded-full text-sm transition-colors inline-block font-extrabold'>
+											Donate
+										</Link>
+									</div>
+								</div>
+							)}
+
+							{/* When scrolled - horizontal layout */}
+							{isScrolled && (
+								<div className='flex items-center space-x-3'>
+									<button
+										onClick={handleSearchClick}
+										className='p-2 rounded-full transition-colors text-[#101066]'>
+										<IoSearch className='h-7 w-7' />
+									</button>
+									<Link
+										to='/visit-trevorspace'
+										className='bg-[#101066] hover:bg-white text-white px-6 py-3 rounded-full text-sm transition-colors inline-block hover:border-2 hover:border-[#101066] hover:text-[#101066] font-extrabold'>
+										Meet Friends
+									</Link>
+									<Link
+										to='/get-help'
+										className='bg-[#101066] hover:bg-white text-white px-6 py-3 rounded-full text-sm  transition-colors inline-block hover:border-2 hover:border-[#101066] hover:text-[#101066] font-extrabold'>
+										Reach A Counselor
+									</Link>
+									<Link
+										to='/donate'
+										className='bg-[#101066] hover:bg-white hover:border-2 hover:border-[#101066] hover:text-[#101066]  text-white px-6 py-3 rounded-full text-sm transition-colors inline-block font-extrabold'>
+										Donate
+									</Link>
+								</div>
+							)}
 						</div>
 
 						{/* Mobile menu button */}
@@ -321,7 +228,7 @@ const Navbar = () => {
 								onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 								className={`p-2 rounded-md transition-colors ${
 									isScrolled
-										? 'text-teal-800 hover:text-teal-600'
+										? 'text-teal-800 hover:text-teal-600 '
 										: 'text-white hover:text-gray-200'
 								}`}>
 								{isMobileMenuOpen ? (
@@ -338,17 +245,16 @@ const Navbar = () => {
 			{/* Mobile Sidebar Overlay */}
 			{isMobileMenuOpen && (
 				<div className='lg:hidden fixed inset-0 z-40'>
-					{/* Sidebar */}
+					{/* Sidebar - increased width */}
 					<div
-						className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
+						className={`fixed top-0 right-0 h-full w-96 max-w-[90vw] bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
 							isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
 						}`}>
-						{/* Header */}
-						<div className='flex items-center justify-between p-4 border-b border-gray-200'>
-							<div className='font-bold text-xl text-teal-800'>Menu</div>
+						{/* Header - removed duplicate close button */}
+						<div className='flex items-center justify-end p-4 border-b border-gray-200'>
 							<button
 								onClick={() => setIsMobileMenuOpen(false)}
-								className='p-2 rounded-md text-teal-800 hover:text-teal-600 transition-colors'>
+								className='p-2 rounded-md text-[#101066] hover:text-teal-600 transition-colors'>
 								<IoClose className='h-6 w-6' />
 							</button>
 						</div>
@@ -356,6 +262,16 @@ const Navbar = () => {
 						{/* Content */}
 						<div className='h-full overflow-y-auto pb-20'>
 							<div className='px-4 py-4 space-y-1'>
+								{/* Search button moved to top */}
+								<div className='pb-3 border-b border-gray-200 mb-4'>
+									<button
+										onClick={handleSearchClick}
+										className='w-full flex items-center justify-center py-3 text-[#101066] font-medium hover:text-teal-600 transition-colors text-lg'>
+										<IoSearch className='h-5 w-5 mr-2' />
+										Search
+									</button>
+								</div>
+
 								{/* Main action buttons */}
 								<Link
 									to='/donate'
@@ -376,14 +292,14 @@ const Navbar = () => {
 									Meet Friends
 								</Link>
 
-								{/* Menu items */}
+								{/* Menu items - increased text sizes and updated colors */}
 								{menuItems.map((item, index) => (
 									<div
 										key={index}
 										className='border-b border-gray-200 last:border-b-0'>
 										<button
 											onClick={() => toggleDropdown(index)}
-											className='w-full flex items-center justify-between py-3 text-left text-teal-800 font-medium'>
+											className='w-full flex items-center justify-between py-3 text-left text-[#101066] font-medium text-lg'>
 											{item.title}
 											<IoIosArrowDown
 												className={`h-4 w-4 transition-transform ${
@@ -399,9 +315,11 @@ const Navbar = () => {
 														key={subIndex}
 														to={subItem.path}
 														onClick={() => handleNavigation(subItem.path)}
-														className='block py-2 pl-4 text-sm text-gray-600 hover:text-teal-800 transition-colors'>
-														<div className='font-medium'>{subItem.name}</div>
-														<div className='text-xs text-gray-500 mt-1'>
+														className='block py-2 pl-4 text-[#101066] hover:text-teal-800 transition-colors'>
+														<div className='font-medium text-base'>
+															{subItem.name}
+														</div>
+														<div className='text-sm text-[#101066] mt-1 opacity-80'>
 															{subItem.description}
 														</div>
 													</Link>
@@ -410,16 +328,6 @@ const Navbar = () => {
 										)}
 									</div>
 								))}
-
-								{/* Search button for mobile */}
-								<div className='pt-3 border-t border-gray-200'>
-									<button
-										onClick={handleSearchClick}
-										className='w-full flex items-center justify-center py-3 text-teal-800 font-medium hover:text-teal-600 transition-colors'>
-										<IoSearch className='h-5 w-5 mr-2' />
-										Search
-									</button>
-								</div>
 							</div>
 						</div>
 					</div>

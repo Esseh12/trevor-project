@@ -97,3 +97,141 @@ export const resources = [
 		tags: ['Mental Health', 'Community'],
 	},
 ];
+
+export const menuItems = [
+	{
+		title: 'Who We Are',
+		items: [
+			{
+				name: 'Pride',
+				description: 'Celebrate Pride with us',
+				path: '/pride',
+			},
+			{
+				name: 'Financial Reports',
+				description: 'Look at our yearly annual financial statements',
+				path: '/financial-reports',
+			},
+			{
+				name: 'Contact Us',
+				description: 'Reach out to one of our team members',
+				path: '/contact-us',
+			},
+		],
+	},
+	{
+		title: 'What We Do',
+		items: [
+			{
+				name: 'Crisis Services',
+				description:
+					'We provide counseling support for LGBTQ+ young people 24/7, all year round',
+				path: '/crisis-services',
+			},
+			{
+				name: 'Peer Support',
+				description:
+					'We provide an affirming international community for LGBTQ+ young people',
+				path: '/visit-trevorspace',
+			},
+			{
+				name: 'Advocacy',
+				description:
+					'We work to change hearts, minds, and laws in support of young LGBTQ+ lives',
+				path: '/advocacy',
+			},
+			{
+				name: 'Public Education',
+				description:
+					'We help allies and educators understand the needs of LGBTQ+ young people',
+				path: '/public-education',
+			},
+			{
+				name: 'Research',
+				description:
+					'We conduct research studies to equip policymakers and other LGBTQ+ youth facing professionals',
+				path: '/research',
+			},
+		],
+	},
+	{
+		title: 'Get Involved',
+		items: [
+			{
+				name: 'Partner With Us',
+				description: 'Join our list of amazing partners',
+				path: '/partner-with-us',
+			},
+			{
+				name: 'Volunteer',
+				description: 'Apply to join us in supporting young LGBTQ+ lives',
+				path: '/volunteer',
+			},
+		],
+	},
+	{
+		title: 'Support Us',
+		items: [
+			{
+				name: 'Donate',
+				description: 'Support The Trevor Project Today',
+				path: '/be-the-one',
+			},
+			{
+				name: 'Fundraise',
+				description: 'Tap into your network and help us change the world',
+				path: '/fundraise',
+			},
+			{
+				name: 'Donor Community',
+				description: 'Learn about our grant opportunities',
+				path: '/circle-of-light',
+			},
+			{
+				name: 'Commemorative Giving',
+				description:
+					'Make a tribute gift, leave a legacy, or create a memorial fundraiser in honour of a loved one',
+				path: '/commemorative-giving',
+			},
+		],
+	},
+	{
+		title: 'Resources',
+		items: [
+			{
+				name: 'Blog',
+				description: "Get the latest news from what's happening in our field",
+				path: '/blog',
+			},
+			{
+				name: 'News Press',
+				description:
+					"Get the latest news and press release from what's happening in our field",
+				path: '/press',
+			},
+			{
+				name: 'Research Briefs',
+				description:
+					'Get the latest research and clinical implications related to LGBTQ+ youth and suicide risks',
+				path: '/research-briefs',
+			},
+			{
+				name: 'Breathing Exercise',
+				description:
+					'Try this calming exercise that will help you relax and focus',
+				path: '/breathing-exercise',
+			},
+			{
+				name: 'Mental Health Survey',
+				description: 'Understand the mental health of LGBTQ+ young people',
+				path: '/survey-international',
+			},
+			{
+				name: 'Resource Center',
+				description:
+					'Explore resources for allyship, sexual orientation, gender identity, mental health, and many more',
+				path: '/resources',
+			},
+		],
+	},
+];

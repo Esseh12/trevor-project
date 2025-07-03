@@ -1,3 +1,4 @@
+import { RiDoubleQuotesL, RiDoubleQuotesR } from 'react-icons/ri';
 import heroImg from '../assets/TTP_BrandIllustrations_DayAndNight_Horizontal.webp';
 import lady from '../assets/AdobeStock.jpg';
 import Hero from '../Components/Volunteer/Hero';
@@ -27,7 +28,7 @@ const CrisisServices = () => {
 							{/* Image Section */}
 							<div className='flex justify-center lg:justify-end order-2 lg:order-1'>
 								<div className='relative'>
-									<div className='w-80 h-96 sm:w-96 sm:h-[28rem] bg-black rounded-lg overflow-hidden shadow-2xl'>
+									<div className='w-80 h-96 sm:w-96 sm:h-[25rem] bg-black rounded-lg overflow-hidden shadow-2xl'>
 										<img
 											src={lady}
 											alt='Smiling person in red hijab'
@@ -42,8 +43,9 @@ const CrisisServices = () => {
 							<div className='flex flex-col justify-center order-1 lg:order-2 text-center'>
 								<div className='space-y-6'>
 									{/* Quote marks */}
-									<div className='text-6xl sm:text-7xl lg:text-8xl font-serif text-blue-900 leading-none'>
-										"
+									<div className='text-4xl caveat text-blue-900 leading-none'>
+										<RiDoubleQuotesL className='inline-block' />
+										<RiDoubleQuotesR className='inline-block' />
 									</div>
 
 									{/* Quote text */}
