@@ -5,7 +5,7 @@ import SupportAdult from '../assets/TTP_SupportiveAdult_Tom-Skyler1.JPG-720x479.
 const Blogs = () => {
 	return (
 		<>
-			<section className='bg-[#0c4653] pt-16 md:py-16 md:px-6 md:min-h-screen flex items-center justify-center'>
+			<section className='bg-[#0c4653] pt-32  md:py-16 md:px-6 md:min-h-screen flex items-center justify-center'>
 				<div className='w-full md:max-w-7xl md:mx-auto'>
 					<div className='flex flex-col lg:flex-row items-center gap-12'>
 						{/* Left side - Text content */}

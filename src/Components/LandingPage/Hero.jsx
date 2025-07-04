@@ -12,7 +12,7 @@ const Hero = () => {
 				<div className='max-w-7xl py-8 flex items-center min-h-[60vh] md:min-h-screen'>
 					<div className='flex w-full items-center justify-between absolute lg:pl-60'>
 						{/* Left Content */}
-						<div className='relative text-white text-left w-full mx-auto z-30 ml-5  sm:ml-0 sm:px-4 sm:max-w-3xl md:max-w-full md:ml-0 md:px-4  md:mx-0 lg:ml-5 '>
+						<div className='relative text-white text-left w-full mx-auto z-30    sm:px-4 sm:max-w-3xl md:max-w-full  md:px-4  md:mx-0 lg:ml-5 '>
 							<div className='font-semibold text-2xl  md:text-3xl  md:text-left lg:text-6xl leading-tight mb-8 text-center'>
 								<h1>You deserve a </h1>
 								<span className='font-bold text-5xl lg:text-[82px] md:text-5xl sm:text-4xl caveat'>

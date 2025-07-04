@@ -2,7 +2,7 @@ import { FaUsers } from 'react-icons/fa6';
 
 export default function Hero() {
 	return (
-		<div className='min-h-screen bg-gradient-to-br from-orange-400 via-orange-300 to-yellow-200'>
+		<div className='pt-20 md:pt-0 min-h-screen bg-gradient-to-br from-orange-400 via-orange-300 to-yellow-200'>
 			{/* Main Content */}
 			<main className='flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-12'>
 				<div className='max-w-4xl mx-auto text-center'>

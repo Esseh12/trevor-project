@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { RiDoubleQuotesL } from 'react-icons/ri';
+import { RiDoubleQuotesR } from 'react-icons/ri';
 import josiah from '../../assets/josiah.jpeg';
 
 const testimonialData = [
@@ -51,7 +53,12 @@ export default function TestimonialCarousel() {
 					{/* Content */}
 					<div className='text-center max-w-xl'>
 						{/* Quote Icon */}
-						<div className='text-6xl font-bold text-blue-900 mb-6'>"</div>
+						<div className=' text-[#003a48] '>
+							<div className='text-2xl md:text-3xl font-bold  mb-3 flex items-center justify-center relative caveat'>
+								<RiDoubleQuotesL />
+								<RiDoubleQuotesR className='bottom-3' />
+							</div>
+						</div>
 
 						{/* Quote Text */}
 						<blockquote className='text-xl lg:text-3xl leading-10 font-semibold text-[#003A48] mb-8 '>

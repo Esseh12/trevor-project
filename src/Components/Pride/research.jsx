@@ -4,7 +4,7 @@ import supportIllustration from '../../assets/TTP_Research_NationalSurvey_Recrui
 const Research = () => {
 	return (
 		<>
-			<section className='relative py-16 lg:py-24 lg:pb-80 overflow-hidden lg:mb-20'>
+			<section className='relative py-16 lg:py-24 lg:pb-80 overflow-hidden lg:mb-20 mx-6 lg:mx-0'>
 				<div className='flex flex-col lg:flex-row items-start relative gap-8 lg:gap-0 -ml-4'>
 					{/* Content Section - Now on the left */}
 					<div className='relative z-0 bg-[#6b5df6] w-full lg:w-[65%] lg:mr-auto p-6 sm:p-8 md:p-12 lg:p-24 lg:py-36 rounded-2xl text-white'>

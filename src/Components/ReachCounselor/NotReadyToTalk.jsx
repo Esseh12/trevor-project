@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function NotReadyToTalk() {
 	return (
-		<div className='relative min-h-screen overflow-hidden'>
+		<div className='relative  sm:min-h-screen overflow-hidden'>
 			{/* Faded background gradient layer */}
 			<div className='absolute inset-0 z-0'>
 				<div className='bg-white w-full h-full md:bg-[linear-gradient(to_bottom,_#8b5cf6_0%,_#a855f7_25%,_#c084fc_50%,_#ddd6fe_75%,_#e9d5ff_100%)] md:opacity-10' />
@@ -25,7 +25,7 @@ export default function NotReadyToTalk() {
 			</div>
 
 			{/* Foreground content */}
-			<div className='relative z-10 flex items-center justify-center min-h-screen px-4'>
+			<div className='relative z-10 flex items-center justify-center md:min-h-screen min-h-[70vh] px-4'>
 				<div className='text-center max-w-md'>
 					<h2 className='text-4xl md:text-5xl font-bold text-gray-900 mb-6'>
 						Not ready to talk?

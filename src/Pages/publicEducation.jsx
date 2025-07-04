@@ -18,6 +18,7 @@ const PublicEducation = () => {
 						image={learnTogether}
 						subText={`Competent suicide prevention starts with how we educate ourselves and each other. The Trevor Project offers LGBTQ+ youth suicide prevention trainings that give everyone the ability to help.`}
 						imageSize='medium'
+						className='pt-36 md:pt-0'
 					/>
 					<div className='h-0 md:h-24' />
 				</div>

@@ -37,7 +37,7 @@ const Hero = ({
 
 	return (
 		<div
-			className={`${minHeight} flex items-center justify-center flex-col px-4 ${className}`}
+			className={`${minHeight} flex items-center   justify-center flex-col px-4 ${className}`}
 			style={{ backgroundColor }}>
 			{/* text and button */}
 			<div

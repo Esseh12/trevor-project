@@ -7,10 +7,10 @@ const PrideCard = () => {
 					{/* Volunteer Card */}
 					<div className='relative overflow-hidden rounded-xl bg-[#6d4fe6]  p-8 text-white min-h-[400px] flex flex-col justify-center items-center md:min-h-[600px]'>
 						<div className='space-y-6 text-center '>
-							<h3 className='text-3xl md:text-5xl font-bold leading-tight text-white'>
+							<h3 className='text-3xl md:text-4xl font-bold leading-tight text-white'>
 								Make an
+								<span className='caveat text-[70px] ml-1'>impact.</span>
 								<br />
-								<span className='caveat text-[70px]'>impact.</span>
 								Create a fundraiser.
 							</h3>
 

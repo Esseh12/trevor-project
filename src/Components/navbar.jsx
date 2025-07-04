@@ -214,7 +214,7 @@ const Navbar = () => {
 										Reach A Counselor
 									</Link>
 									<Link
-										to='/donate'
+										to='/be-the-one'
 										className='bg-[#101066] hover:bg-white hover:border-2 hover:border-[#101066] hover:text-[#101066]  text-white px-6 py-3 rounded-full text-sm transition-colors inline-block font-extrabold'>
 										Donate
 									</Link>
@@ -222,7 +222,7 @@ const Navbar = () => {
 							)}
 						</div>
 
-						{/* Mobile menu button */}
+						{/* Mobile menu button - only shows hamburger icon */}
 						<div className='lg:hidden z-10'>
 							<button
 								onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -231,11 +231,7 @@ const Navbar = () => {
 										? 'text-teal-800 hover:text-teal-600 '
 										: 'text-white hover:text-gray-200'
 								}`}>
-								{isMobileMenuOpen ? (
-									<IoClose className='h-6 w-6' />
-								) : (
-									<FiMenu className='h-6 w-6' />
-								)}
+								<FiMenu className='h-6 w-6' />
 							</button>
 						</div>
 					</div>
@@ -250,45 +246,44 @@ const Navbar = () => {
 						className={`fixed top-0 right-0 h-full w-96 max-w-[90vw] bg-white shadow-xl transform transition-transform duration-300 ease-in-out ${
 							isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
 						}`}>
-						{/* Header - removed duplicate close button */}
+						{/* Header with search and close button */}
 						<div className='flex items-center justify-end p-4 border-b border-gray-200'>
+							{/* Search button */}
+							<div className='p-2'>
+								<button
+									onClick={handleSearchClick}
+									className='flex items-center justify-center bg-[#101066] text-white font-medium rounded-full h-10.5 w-10.5'>
+									<IoSearch className='h-7 w-7' />
+								</button>
+							</div>
+							{/* Close button */}
 							<button
 								onClick={() => setIsMobileMenuOpen(false)}
-								className='p-2 rounded-md text-[#101066] hover:text-teal-600 transition-colors'>
-								<IoClose className='h-6 w-6' />
+								className='p-2 text-[#101066]'>
+								<IoClose className='h-8 w-8' />
 							</button>
 						</div>
 
 						{/* Content */}
 						<div className='h-full overflow-y-auto pb-20'>
 							<div className='px-4 py-4 space-y-1'>
-								{/* Search button moved to top */}
-								<div className='pb-3 border-b border-gray-200 mb-4'>
-									<button
-										onClick={handleSearchClick}
-										className='w-full flex items-center justify-center py-3 text-[#101066] font-medium hover:text-teal-600 transition-colors text-lg'>
-										<IoSearch className='h-5 w-5 mr-2' />
-										Search
-									</button>
-								</div>
-
 								{/* Main action buttons */}
 								<Link
-									to='/donate'
+									to='/be-the-one'
 									onClick={() => setIsMobileMenuOpen(false)}
-									className='block w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg text-sm font-medium mb-2 text-center transition-colors'>
+									className='block w-full bg-[#ff5a3d] text-white hover:bg-white hover:text-[#ff5a3d] py-3 px-4 rounded-full  font-bold mb-2 text-center transition-colors'>
 									Donate
 								</Link>
 								<Link
-									to='/crisis-services'
+									to='/get-help'
 									onClick={() => setIsMobileMenuOpen(false)}
-									className='block w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg text-sm font-medium mb-2 text-center transition-colors'>
+									className='block w-full bg-[#ff5a3d] text-white hover:bg-white hover:text-[#ff5a3d] py-3 px-4 rounded-full  font-bold mb-2 text-center transition-colors'>
 									Reach A Counselor
 								</Link>
 								<Link
-									to='/meet-friends'
+									to='/visit-trevorspace'
 									onClick={() => setIsMobileMenuOpen(false)}
-									className='block w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg text-sm font-medium mb-4 text-center transition-colors'>
+									className='block w-full bg-[#ff5a3d] text-white hover:bg-white hover:text-[#ff5a3d] py-3 px-4 rounded-full  font-bold mb-2 text-center transition-colors'>
 									Meet Friends
 								</Link>
 

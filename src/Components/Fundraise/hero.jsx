@@ -5,7 +5,7 @@ const Hero = ({
 }) => {
 	return (
 		<section
-			className='min-h-screen py-16 px-4 flex justify-center items-center'
+			className='min-h-screen py-16 pt-36 md:pt-16 px-4 flex justify-center items-center'
 			style={{ background }}>
 			<div className='max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-40'>
 				{/* text content */}

@@ -61,7 +61,7 @@ const TrevorResearch = () => {
 	];
 
 	return (
-		<div className='mt-80 mb-12'>
+		<div className='mt-20 md:mt-80 mb-12'>
 			<div className='max-w-7xl mx-auto px-4 py-12  min-h-screen'>
 				{/* Header Section */}
 				<div className='text-center mb-12'>

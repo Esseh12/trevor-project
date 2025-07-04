@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ContactUsHero() {
 	return (
-		<section className='bg-[#003a48] min-h-screen flex items-center justify-center px-4 py-16 sm:px-6 lg:px-8'>
+		<section className='bg-[#003a48] min-h-screen flex items-center justify-center px-4 py-16 sm:px-6 lg:px-8 pt-24 md:pt-16'>
 			<div className='max-w-4xl mx-auto text-center'>
 				{/* Main Heading */}
 				<h1 className='text-4xl sm:text-[46px] font-bold text-white mb-6'>

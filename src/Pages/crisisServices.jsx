@@ -17,6 +17,7 @@ const CrisisServices = () => {
 						image={heroImg}
 						subText={`Crisis counselors are trained to answer calls, chats, or texts from LGBTQ+ young people who reach out on our free, confidential and secure 24/7 service when they are struggling with issues such as coming out, LGBTQ+ identity, depression, and suicide.`}
 						imageSize='medium'
+						className='pt-36 md:pt-0'
 					/>
 					<div className='h-12 md:h-24' />
 				</div>

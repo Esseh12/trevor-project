@@ -20,13 +20,13 @@ const Volunteer = () => {
 				image={volunteerImg}
 			/>
 			{/* help save lives */}
-			<section className='mt-28'>
-				<div className='min-h-screen flex flex-col justify-center items-center text-center px-4 max-w-[800px] mx-auto'>
-					<h1 className='text-[#101066] text-[46px] leading-14 font-bold mb-4'>
+			<section className='mt-14 md:mt-28'>
+				<div className='min-h-[60vh] sm:min-h-[75vh] md:min-h-screen flex flex-col justify-center items-center text-center px-4 max-w-[800px] mx-auto'>
+					<h1 className='text-[#101066] text-2xl md:text-[46px] leading-10 md:leading-14 font-bold mb-4'>
 						You can help us save lives through our virtual volunteer
 						opportunity.
 					</h1>
-					<p className='max-w-3xl text-[26px] leading-9 text-[#101066]'>
+					<p className='max-w-3xl text-xl sm:text-[26px] leading-9 text-[#101066]'>
 						As a crisis support volunteer, you are on the front lines; working
 						one-on-one with LGBTQ+ young people to help them navigate tough
 						times and to prevent suicide.

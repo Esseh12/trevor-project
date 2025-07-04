@@ -152,7 +152,7 @@ const BlogComponent = () => {
 				<div className='relative inline-block'>
 					<button
 						onClick={() => setShowSortDropdown(!showSortDropdown)}
-						className='flex items-center gap-2 px-4 py-2 border border-[#003A48] rounded-md bg-white transition-colors text-2xl font-semibold text-[#003A48]'>
+						className='flex items-center gap-2 px-4 py-2 border border-[#003A48] rounded-md bg-white transition-colors text-lg sm:text-xl md:text-2xl font-semibold text-[#003A48]'>
 						<span className='font-medium'>Sort By:</span>
 						<span className='text-[#003A48]'>
 							{sortBy === 'newest' ? 'Newest to Oldest' : 'Oldest to Newest'}
