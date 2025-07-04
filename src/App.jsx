@@ -23,6 +23,7 @@ import MainReasearch from './Pages/mainResearch';
 import Resources from './Pages/resources';
 import Donate from './Pages/donate';
 import Advocacy from './Pages/advocacy';
+import Pride from './Pages/pride';
 
 function App() {
 	return (
@@ -112,6 +113,10 @@ function App() {
 				<Route
 					path='/advocacy'
 					element={<Advocacy />}
+				/>
+				<Route
+					path='/pride'
+					element={<Pride />}
 				/>
 				<Route
 					path='*'
